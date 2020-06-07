@@ -1,0 +1,24 @@
+{
+  "name": "chaseisabelle/resphp",
+  "description": "resp protocol encoder/decoder",
+  "keywords": [
+    "redis",
+    "resp"
+  ],
+  "homepage": "https://github.com/chaseisabelle/resphp",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "chase isabelle",
+      "email": "adogthatcantalk@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1"
+  },
+  "autoload": {
+    "psr-0": {
+      "ChaseIsabelle\\RESPHP\\": "src"
+    }
+  }
+}
