@@ -3,6 +3,7 @@
 namespace Test\ChaseIsabelle\RESPHP;
 
 use ChaseIsabelle\RESPHP\Decoder;
+use ChaseIsabelle\RESPHP\Encoder;
 use Exception;
 
 class DecoderTest extends RESPHPTestCase
@@ -58,5 +59,12 @@ class DecoderTest extends RESPHPTestCase
         $input  = "+s\r\n:1\r\n\$-1\r\n-e\r\n*1\r\n:2\r\n";
 
         $this->assertEquals($output, Decoder::decode($input));
+    }
+
+    public function testBackToBack()
+    {
+        $input = "+s\r\n:1\r\n\$-1\r\n-e\r\n*1\r\n:2\r\n";
+
+        $this->assertEquals($input, Encoder::encode(Decoder::decode($input)));
     }
 }
