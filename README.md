@@ -4,6 +4,7 @@ a library for encoding/decoding the redis [resp protocol](https://redis.io/topic
 ---
 ### install
 
+using [composer](https://github.com/chaseisabelle/resphp)
 ```bash
 composer install chaseisabelle/resphp
 ```
