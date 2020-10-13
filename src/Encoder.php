@@ -19,7 +19,7 @@ abstract class Encoder
     {
         $prefix = '+';
 
-        if (preg_match('~[^\x20-\x7E\t\r\n]~', $string)) {
+        if (!mb_check_encoding($string, 'ASCII')) {
             $prefix = self::suffix('$' . strlen($string));
         }
 
@@ -63,6 +63,8 @@ abstract class Encoder
                 return self::error($value);
             case is_int($value):
                 return self::int($value);
+            case is_null($value):
+                return self::null();
             default:
                 break;
         }

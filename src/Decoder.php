@@ -2,8 +2,6 @@
 
 namespace ChaseIsabelle\RESPHP;
 
-use ContainerAylcaBw\getConsole_Command_DebugAutowiringService;
-
 abstract class Decoder
 {
     public static function decode(string $string): array
@@ -21,16 +19,9 @@ abstract class Decoder
     {
         $cursor = 0;
         $buffer = [];
-        $skip   = false;
 
         while ($lines && $cursor++ < $count) {
             $line = array_shift($lines);
-
-            if ($skip) {
-                $skip = false;
-
-                continue;
-            }
 
             if (!$line) {
                 throw new \Exception('malformed input: empty/invalid line');
@@ -55,14 +46,13 @@ abstract class Decoder
                         break;
                     }
 
-                    $line = $lines[$cursor + 1] ?? null;
+                    $line = array_shift($lines);
 
-                    if (!$line || intval($suffix) !== strlen($line)) {
+                    if (!is_string($line) || intval($suffix) !== strlen($line)) {
                         throw new \Exception('malformed input: bulk string');
                     }
 
                     $buffer[] = $line;
-                    $skip     = true;
 
                     break;
                 case ':':

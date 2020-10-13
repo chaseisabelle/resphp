@@ -1,6 +1,6 @@
 {
   "name": "chaseisabelle/resphp",
-  "description": "resp protocol encoder/decoder",
+  "description": "redis resp protocol encoder/decoder",
   "keywords": [
     "redis",
     "resp"
@@ -9,16 +9,23 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "chase isabelle",
-      "email": "adogthatcantalk@gmail.com"
+      "name": "chase isabelle"
     }
   ],
   "require": {
     "php": ">=7.1"
   },
+  "require-dev": {
+    "phpunit/phpunit": "^8.4"
+  },
   "autoload": {
-    "psr-0": {
+    "psr-4": {
       "ChaseIsabelle\\RESPHP\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Test\\ChaseIsabelle\\RESPHP\\": "tests/"
     }
   }
 }
