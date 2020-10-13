@@ -1,6 +1,7 @@
 {
   "name": "chaseisabelle/resphp",
   "description": "redis resp protocol encoder/decoder",
+  "type": "library",
   "keywords": [
     "redis",
     "resp"
@@ -27,5 +28,9 @@
     "psr-4": {
       "Test\\ChaseIsabelle\\RESPHP\\": "tests/"
     }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
   }
 }
