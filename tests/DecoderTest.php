@@ -19,6 +19,11 @@ class DecoderTest extends RESPHPTestCase
         $input  = "\$4\r\n$output\r\n";
 
         $this->assertEquals([$output], Decoder::decode($input));
+
+        $output = '';
+        $input  = "\$0\r\n$output\r\n";
+
+        $this->assertEquals([$output], Decoder::decode($input));
     }
 
     public function testDecodeInt()

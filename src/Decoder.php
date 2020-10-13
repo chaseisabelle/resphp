@@ -23,7 +23,7 @@ abstract class Decoder
         while ($lines && $cursor++ < $count) {
             $line = array_shift($lines);
 
-            if (!$line) {
+            if (!is_string($line)) {
                 throw new \Exception('malformed input: empty/invalid line');
             }
 
