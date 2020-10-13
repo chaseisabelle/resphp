@@ -88,7 +88,7 @@ class EncoderTest extends RESPHPTestCase
         $this->assertEquals($output, Encoder::encode($input));
     }
 
-    public function testBackToBack()
+    public function testEncodeDecode()
     {
         $input = ['s', 1, null, new Exception('e')];
 

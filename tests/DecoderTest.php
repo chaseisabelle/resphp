@@ -61,7 +61,7 @@ class DecoderTest extends RESPHPTestCase
         $this->assertEquals($output, Decoder::decode($input));
     }
 
-    public function testBackToBack()
+    public function testDecodeEncode()
     {
         $input = "+s\r\n:1\r\n\$-1\r\n-e\r\n*1\r\n:2\r\n";
 
